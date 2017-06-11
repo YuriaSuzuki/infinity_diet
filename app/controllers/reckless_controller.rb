@@ -1,2 +1,0 @@
-class RecklessController < ApplicationController
-end

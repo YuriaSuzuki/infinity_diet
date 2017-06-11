@@ -1,0 +1,2 @@
+class RecklessDietsController < ApplicationController
+end
