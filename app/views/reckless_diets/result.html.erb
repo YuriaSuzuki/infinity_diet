@@ -3,6 +3,7 @@
     <%= "#{@name}さんのカルテ"%>
   </div>
       <%= "#{@weight_diff}kg痩せるには..."%>
+      <br>
       <% @plans.each_pair do |plan, num| %>
       <%= "#{plan}を#{num}回"%>
     <br>
