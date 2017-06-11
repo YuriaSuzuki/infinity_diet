@@ -12,6 +12,6 @@ module InfinityDiet
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    config.autoload_paths += Dir[Rail.root.join('app', 'services', '*')]
+    config.autoload_paths += Dir[Rails.root.join('app', 'services', '*')]
   end
 end

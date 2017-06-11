@@ -1,1 +1,6 @@
-<%= form_tag  %>
+<%= form_tag result, :user_data do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>

@@ -1,7 +1,7 @@
 class RecklessDietsController < ApplicationController
   def top; end
 
-  def show
+  def result
     @plan = BmiService::CalculatePlanFromBmi.new(bmi).call
   end
 
