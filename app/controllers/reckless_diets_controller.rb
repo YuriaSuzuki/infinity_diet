@@ -9,6 +9,6 @@ class RecklessDietsController < ApplicationController
   private
 
   def bmi
-    params[:weight] / params[:height] ** 2
+    params[:weight].to_i / params[:height].to_i ** 2
   end
 end
