@@ -2,7 +2,8 @@ class RecklessDietsController < ApplicationController
   def top; end
 
   def show
-    @plan = BmiService::CalculatePlanFromBmi.new(bmi).call
+    @plan = BmiService::CalculatePlanFromBmi.new(bmi, params[:ideal_bmi]).call
+    @name = params[:name]
   end
 
   private
