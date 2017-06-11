@@ -7,7 +7,6 @@ module BmiService
 
     def call
       plan = {}
-      binding.pry
       practices.each do |key, _|
         plan[key] = 0
       end
@@ -24,7 +23,7 @@ module BmiService
     private
 
     def calorie_from_weight
-      (ideal_weight.to_i - weight.to_i) * CALORIE_PER_WEIGHT
+      (weight.to_i - ideal_weight.to_i) * CALORIE_PER_WEIGHT
     end
 
     def practices
