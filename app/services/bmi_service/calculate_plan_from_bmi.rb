@@ -27,7 +27,8 @@ module BmiService
     end
 
     def practices
-      practices ||= BmiService::ReturnPracticeWithCalories.call
+      all_practices ||= BmiService::ReturnPracticeWithCalories.call
+      @practices ||= all_practices.sort_by{rand}.to_h.first(3).to_h
     end
   end
 end
