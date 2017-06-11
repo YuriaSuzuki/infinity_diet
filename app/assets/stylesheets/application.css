@@ -55,9 +55,10 @@ input:focus::-webkit-input-placeholder {
 }
 
 .title {
-  font-family: 'ヒラギノ丸ゴ';
+  font-family: 'ヒラギノ丸ゴ',sans-serif;
   font: bold;
   font-size: 20px;
+  margin-bottom: 20px;
   }
 
 .twitter {
