@@ -4,6 +4,7 @@ module BmiService
     attr_accessor :weight, :ideal_weight
 
     CALORIE_PER_WEIGHT = 7500
+    PLAN_NUM = 3
 
     def call
       plan = {}
@@ -27,7 +28,13 @@ module BmiService
     end
 
     def practices
-      practices ||= BmiService::ReturnPracticeWithCalories.call
+      all_practices ||= BmiService::ReturnPracticeWithCalories.call
+      practices = {}
+      practice_nums = (0..all_practices.count()-1).to_a.sample(PLAN_NUM)
+      all_practices.each_with_index do |key, value, i|
+        practices[key] = value if practice_nums.include?(i)
+      end
+      practices
     end
   end
 end
