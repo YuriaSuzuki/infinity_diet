@@ -1,4 +1,4 @@
-<div class="form-wrap">
+<div id="form-wrap">
   <%= form_tag "reckless_diets/result" do %>
     <%= text_field_tag :name, [], placeholder: '名前', required: true %>
     <%= text_field_tag :height, [], placeholder: '身長', type: 'number', required: true %>
@@ -7,3 +7,8 @@
     <%= submit_tag '診断' %>
   <% end %>
 </div>
+
+<script type="text/javascript">
+  const window_height = window.innerHeight;
+  document.getElementById('form-wrap').style.marginTop = (window_height - 400)/2 + 'px'
+</script>
