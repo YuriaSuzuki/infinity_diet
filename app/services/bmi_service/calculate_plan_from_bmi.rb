@@ -7,14 +7,15 @@ module BmiService
 
     def call
       plan = {}
+      binding.pry
       practices.each do |key, _|
         plan[key] = 0
       end
       left_calorie = calorie_from_weight
       while (left_calorie > 0)
-        practice_id = rand(practices.count())
-        plan[practice_id] += 1
-        left_calorie - practices[practice_id]
+        practice = practices.keys[rand(practices.count())]
+        plan[practice] += 1
+        left_calorie - practices[practice]
       end
 
       plan.reject { |key, value| value == 0 }
@@ -23,7 +24,7 @@ module BmiService
     private
 
     def calorie_from_weight
-      (ideal_weight - weight) * CALORIE_PER_WEIGHT
+      (ideal_weight.to_i - weight.to_i) * CALORIE_PER_WEIGHT
     end
 
     def practices
