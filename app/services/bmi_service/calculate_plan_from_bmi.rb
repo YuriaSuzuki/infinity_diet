@@ -1,25 +1,34 @@
 module BmiService
   class CalculatePlanFromBmi
     include ServiceBase
+    attr_accessor :weight, :ideal_weight
+
+    CALORIE_PER_WEIGHT = 7500
+
+    def initialize(weight, ideal_weight)
+      @weight = weight
+      @ideal_weight = ideal_weight
+    end
 
     def call
-      plan = \
-        if bmi > 30
-          Plan::ID::EVEREST
-        elsif bmi > 25
-          Plan::ID::BDP
-        elsif bmi > 22
-          Plan::ID::DC
-        elsif bmi > 18
-          Plan::ID::NOTHING
-        else
-          Plan::ID::EAT
-        end
+      plan = {}
+      PRACTICES.each |key, _| do
+        plan[key] = 0
+      end
+      left_calorie = calorie_from_weight
+      while (left_calorie > 0)
+        practice_id = rand(PRACTICES.count())
+        ++plan[practice_id]
+        left_calorie - PRACTICES[practice_id] 
+      end
+
+      return plan.reject { |key, value| value == 0 }
     end
 
     private
 
-    attr_accessor :bmi
-
+    def calorie_from_weight
+      (@ideal_weight - @weight) * CALORIE_PER_WEIGHT
+    end
   end
 end
