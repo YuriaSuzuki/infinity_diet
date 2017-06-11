@@ -12,7 +12,7 @@ module BmiService
 
     def call
       plan = {}
-      pratices = BmiService::ReturnPracticeWithCalories.call
+      practices = BmiService::ReturnPracticeWithCalories.call
       practices.each do |key, _|
         plan[key] = 0
       end
