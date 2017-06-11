@@ -1,2 +1,2 @@
-class RecklessController < ApplicationController
+class RecklessDietsController < ApplicationController
 end
