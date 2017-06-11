@@ -23,7 +23,7 @@ module BmiService
     private
 
     def calorie_from_weight
-      (@ideal_weight - @weight) * CALORIE_PER_WEIGHT
+      (ideal_weight - weight) * CALORIE_PER_WEIGHT
     end
 
     def practices
