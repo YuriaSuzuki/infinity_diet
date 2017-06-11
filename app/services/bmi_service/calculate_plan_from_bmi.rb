@@ -7,7 +7,6 @@ module BmiService
 
     def call
       plan = {}
-      binding.pry
       practices.each do |key, _|
         plan[key] = 0
       end

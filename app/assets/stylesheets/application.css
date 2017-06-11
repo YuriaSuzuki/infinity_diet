@@ -26,7 +26,7 @@ header {
   text-align: center;
 }
 
-input {
+input, .content{
   margin: auto;
   border: none;
   border-bottom: solid 1px #bdbdbd;
@@ -53,3 +53,14 @@ input::-webkit-input-placeholder {
 input:focus::-webkit-input-placeholder {
   color: #e0e0e0;
 }
+
+.title {
+  font-family: 'ヒラギノ丸ゴ';
+  font: bold;
+  font-size: 20px;
+  }
+
+.twitter {
+  margin: auto;
+  margin-top: 20px;
+  }
