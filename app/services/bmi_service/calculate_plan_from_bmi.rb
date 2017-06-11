@@ -31,5 +31,9 @@ module BmiService
     def calorie_from_weight
       (@ideal_weight - @weight) * CALORIE_PER_WEIGHT
     end
+
+    def practices
+      practices ||= BmiService::ReturnPracticeWithCalories.call
+    end
   end
 end
