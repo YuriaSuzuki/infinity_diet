@@ -12,8 +12,8 @@ module BmiService
 
     def call
       plan = {}
-      practices = BmiService::ReturnPracticeWithCalories.call
-      practices.each |key, _| do
+      pratices = BmiService::ReturnPracticeWithCalories.call
+      practices.each do |key, _|
         plan[key] = 0
       end
       left_calorie = calorie_from_weight
