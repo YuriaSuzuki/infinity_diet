@@ -12,14 +12,15 @@ module BmiService
 
     def call
       plan = {}
-      PRACTICES.each |key, _| do
+      pratices = BmiService::ReturnPracticeWithCalories.call
+      practices.each |key, _| do
         plan[key] = 0
       end
       left_calorie = calorie_from_weight
       while (left_calorie > 0)
-        practice_id = rand(PRACTICES.count())
+        practice_id = rand(practices.count())
         ++plan[practice_id]
-        left_calorie - PRACTICES[practice_id] 
+        left_calorie - practices[practice_id]
       end
 
       return plan.reject { |key, value| value == 0 }
