@@ -5,11 +5,6 @@ module BmiService
 
     CALORIE_PER_WEIGHT = 7500
 
-    def initialize(weight, ideal_weight)
-      @weight = weight.to_i
-      @ideal_weight = ideal_weight.to_i
-    end
-
     def call
       plan = {}
       practices.each do |key, _|
