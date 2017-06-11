@@ -13,11 +13,11 @@ module BmiService
       left_calorie = calorie_from_weight
       while (left_calorie > 0)
         practice_id = rand(practices.count())
-        ++plan[practice_id]
+        plan[practice_id] += 1
         left_calorie - practices[practice_id]
       end
 
-      return plan.reject { |key, value| value == 0 }
+      plan.reject { |key, value| value == 0 }
     end
 
     private
