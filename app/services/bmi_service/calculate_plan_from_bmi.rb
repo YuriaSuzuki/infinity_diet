@@ -22,7 +22,7 @@ module BmiService
         left_calorie - practices[practice_id]
       end
 
-      return plan.reject { |key, value| value == 0 }
+      plan.reject { |key, value| value == 0 }
     end
 
     private
