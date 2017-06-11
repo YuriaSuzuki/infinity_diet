@@ -1,6 +1,9 @@
-<%= form_tag result, :user_data do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %>
+<div class="form-wrap">
+  <%= form_tag "reckless_diets/result" do %>
+    <%= text_field_tag :name, [], placeholder: '名前', required: true %>
+    <%= text_field_tag :height, [], placeholder: '身長', type: 'number', required: true %>
+    <%= text_field_tag :weight, [], placeholder: '体重', type: 'number', required: true %>
+    <%= text_field_tag :ideal_weight, [], placeholder: '理想体重', type: 'number', required: true %>
+    <%= submit_tag '診断' %>
+  <% end %>
+</div>
